@@ -1,0 +1,20 @@
+{
+    "canisters": {
+       "backend":{
+        "type":"azle",
+        "main": "src/backend/index.ts",
+        "custom": {
+            "experimental": true
+        }
+       }
+     
+    },
+    "defaults": {
+        "build": {
+            "args": "",
+            "packtool": ""
+        }
+    },
+    "version": 1
+}
+

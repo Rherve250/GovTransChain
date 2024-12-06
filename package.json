@@ -1,0 +1,22 @@
+{
+  "name": "govtranschain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dfinity/agent": "^2.1.1",
+    "@dfinity/auth-client": "^2.1.1",
+    "@dfinity/candid": "^2.1.1",
+    "@dfinity/nns": "^6.0.0",
+    "@dfinity/principal": "^2.1.1",
+    "@dfinity/utils": "^2.5.0",
+    "azle": "^0.24.1",  
+    "uuid": "^10.0.0"
+  }
+}
