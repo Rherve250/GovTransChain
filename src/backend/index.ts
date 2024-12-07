@@ -252,6 +252,7 @@ export default Canister({
           return Err({Error: `Error occured ${error.message}`})
         }
     }),
+    
     getProfile:query([],Result(UserProfile, Message),()=>{
       try{
          const ProfileOpt = UserProfileStorage.get(ic.caller());
@@ -262,7 +263,9 @@ export default Canister({
          if(!Owner(ProfileOpt.Owner)) {
           return Err({Error: "Access denied"})
          }
+         console.log(ProfileOpt)
         return Ok(ProfileOpt)
+
       }catch(error:any){
         return Err({Err: `Error occured ${error.message}`})
       }
@@ -379,6 +382,8 @@ export default Canister({
       }
 
     }),
+
+    
 
     getProfilesByRole: query([text],Result(Vec(UserProfile), Message),(Role)=>{
       try{
