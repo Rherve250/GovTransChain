@@ -1,37 +1,54 @@
-const ProgramStats=(Programs:any)=> {
+// Define interfaces for type safety
+interface Program {
+  Citizens: Array<any>; // Replace `any` with the specific type for Citizen objects
+  Beneficiaries: string | number; // Handles both string and number inputs
+}
 
-    let totalProgram = Programs.length;
-    let totalEnrolled = 0;
-    let totalBenefecials = 0;
-    Programs.forEach((Program:any) => {
-      totalEnrolled += Program.Citizens.length
-      totalBenefecials += Number(Program.Beneficials)
-    });
-    return {
-      totalProgram,
-      totalEnrolled,
-      totalBenefecials
-    };
-  }
-  
-  const StockStats=(Stocks: any)=>{
-    let totalStock = Stocks.length;
-    let totalQuantity= 0;
-    let totalRemaining = 0;
-    Stocks.forEach((Stock:any) => {
-        totalQuantity += Number(Stock.Quantity)
-        totalRemaining += Number(Stock.RemainingStock)
-      
-    });
-    return {
-        totalStock,
-        totalQuantity,
-        totalRemaining,
-    };
-  
-  }
+interface Stock {
+  Quantity: string | number; // Handles both string and number inputs
+  RemainingStock: string | number; // Handles both string and number inputs
+}
 
-  export {
-    ProgramStats,
-    StockStats
-  }
+// Function to calculate program statistics
+const calculateProgramStats = (programs: Program[]) => {
+  const totalPrograms = programs.length;
+
+  // Use reduce to calculate totals
+  const { totalEnrolled, totalBeneficiaries } = programs.reduce(
+    (acc, program) => {
+      acc.totalEnrolled += program.Citizens.length;
+      acc.totalBeneficiaries += Number(program.Beneficiaries || 0);
+      return acc;
+    },
+    { totalEnrolled: 0, totalBeneficiaries: 0 }
+  );
+
+  return {
+    totalPrograms,
+    totalEnrolled,
+    totalBeneficiaries,
+  };
+};
+
+// Function to calculate stock statistics
+const calculateStockStats = (stocks: Stock[]) => {
+  const totalStocks = stocks.length;
+
+  // Use reduce to calculate totals
+  const { totalQuantity, totalRemaining } = stocks.reduce(
+    (acc, stock) => {
+      acc.totalQuantity += Number(stock.Quantity || 0);
+      acc.totalRemaining += Number(stock.RemainingStock || 0);
+      return acc;
+    },
+    { totalQuantity: 0, totalRemaining: 0 }
+  );
+
+  return {
+    totalStocks,
+    totalQuantity,
+    totalRemaining,
+  };
+};
+
+export { calculateProgramStats, calculateStockStats };
