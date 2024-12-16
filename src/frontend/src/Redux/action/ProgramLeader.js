@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ToastError, ToastSuccess } from "../../utils/toast";
+import { ToastError } from "../../utils/toast";
 import { ProgramLeaders } from "@/utils/endpoints";
 
 export const ProgramLeadersThunk = createAsyncThunk("ProgramLeaders",

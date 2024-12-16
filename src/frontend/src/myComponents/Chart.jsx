@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { ProfileStatsThunk } from '@/Redux/action/ProfileStats';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const data = [
-  { Role: 'HIGH_OFFICIAL', count: 0 },
-  { Role: 'LOCAL_LEADER', count: 5 },
-  { Role: 'CITIZEN', count: 5},
-];
+
 
 const Chart = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(ProfileStatsThunk());
+  }, [dispatch]);
+  const {  ProfileStats } = useSelector((state)=>state.ProfileStats)
+  const data = ProfileStats?ProfileStats: [
+    { Role: 'HIGH_OFFICIAL', count: 0 },
+    { Role: 'LOCAL_LEADER', count: 5 },
+    { Role: 'CITIZEN', count: 5},
+  ]
+  
   const roleLabels = data.map((item) => item.Role);
   const roleCounts = data.map((item) => item.count);
 

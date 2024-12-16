@@ -4,7 +4,6 @@ import Chart from "../myComponents/Chart";
 import BarChart from "../myComponents/BarChart";
 import DashTable from "../myComponents/DashTable";
 import ProgramDashTable from "../myComponents/GramTable";
-import TransactionTable from "../myComponents/TransactionTable";
 
 
 const AdminDashboard=()=> {
@@ -26,8 +25,6 @@ const AdminDashboard=()=> {
                    <DashTable setStats={setStats}/>
                    <BarChart/>
                    <ProgramDashTable setStats2={setStats2}/>
-                   {/* <TransactionTable/>  */}
-
                </div>
             </div>
 	</>
