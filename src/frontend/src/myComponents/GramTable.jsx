@@ -75,42 +75,6 @@ const ProgramDashTable=({setStats2})=>{
              ))
               )}
 
-
-
-
-
-
-
-
-              {/* {loadingz?
-     (<div style={{textAlign: "center"}}>
-      <TableSkeleton />
-   </div>):  
-   (Allprogram?.length  === 0|| Errorz)?(
-    <div style={{textAlign: "center"}}>
-          <p>No Users</p>
-    </div>
-  ):(
-    Allprogram.map((item)=>(
-          <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">{item.Name}</div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">{item.LocalLeaders.length}</div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center text-green-500">{item.Citizens.length}</div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">{item.Beneficials}</div>
-                </td>
-              </tr> 
-     ))
-
-  )}  */}
    </tbody>
       </table>
     </div>
