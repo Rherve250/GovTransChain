@@ -14,7 +14,13 @@ const columns = [
   { field: 'SenderId', headerName: 'Sender ID', flex: 1 },
   { field: 'ReceiverId', headerName: 'Receiver ID', flex: 1 },
   { field: 'Quantity', headerName: 'Quantity', type: 'number', flex: 1 },
-  { field: 'TransactionType', headerName: 'Transaction Type', flex: 1 },
+  { 
+    field: 'TransactionType', 
+    headerName: 'Transaction Type', 
+    flex: 1,
+    renderCell: (params) => (Object.keys(params.row.TransactionType))
+    
+  },
   {
     field: 'Status',
     headerName: 'Status',
@@ -29,11 +35,11 @@ const columns = [
         <Box
           component="span"
           sx={{
-            color: statusColors[params.value],
+            color: statusColors[Object.keys(params.row.Status)],
             fontWeight: 'bold',
           }}
         >
-          {params.value}
+          {Object.keys(params.row.Status)}
         </Box>
       );
     },
