@@ -19,12 +19,14 @@ import GetAllLeaderSlice from "../slice/GetAllLeaderSlice"
 import ChangeRoleSlice from '../slice/ChangeRoleSlice';
 import AddLeaderToSlice from '../slice/AddLeaderToSlice';
 import AllTransactionsSlice from "../slice/AllTransactionSlice"
+import ProfileStatsSlice from '../slice/ProfileStatsSlice';
 
 
 const store = configureStore({
 	reducer: {
 		Profile: CreateProfileSlice,
         AllProfile:GetAllProfileSlice,
+		ProfileStats: ProfileStatsSlice,
 
 		Program: CreateProgramSlice,
 		AllProgram: GetAllProgramSlice,

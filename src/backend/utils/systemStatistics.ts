@@ -1,3 +1,6 @@
+import { nat, text } from "azle/experimental";
+import { ProfileStatProp, UserProfile } from "../data/dataType";
+
 const ProgramStats=(Programs:any)=> {
 
     let totalProgram = Programs.length;
@@ -31,7 +34,16 @@ const ProgramStats=(Programs:any)=> {
   
   }
 
+  const getRoleCounts=(userProfiles: UserProfile[] = []):ProfileStatProp[] =>{
+    const roles = ['HIGH_OFFICIAL', 'LOCAL_LEADER', 'CITIZEN'];
+    return roles.map(role => ({
+        Role: role,
+        count: userProfiles.filter(profile => Object.values(profile.Role)[0] == role).length.toString(),
+    }));
+}
+
   export {
     ProgramStats,
-    StockStats
+    StockStats,
+    getRoleCounts
   }

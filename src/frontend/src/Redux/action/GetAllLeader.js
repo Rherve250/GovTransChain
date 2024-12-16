@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ToastError, ToastSuccess } from "../../utils/toast";
+import { ToastError } from "../../utils/toast";
 import { GetAllLeader } from "../../utils/endpoints";
 
 export const GetAllLeaderThunk = createAsyncThunk("GetAllLeader",

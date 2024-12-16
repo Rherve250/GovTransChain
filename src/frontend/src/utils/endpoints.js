@@ -7,9 +7,11 @@ const getProfile=async()=>{
 const GetAllProfile=async()=>{
   return await window.canister.GovTransChainApi.GetAllProfile()
 }
+const userProfileStats=async()=>{
+  return await window.canister.GovTransChainApi.userProfileStats()
+}
 // Program endpoint
 const CreateProgram=async(Program)=>{
-  console.log(Program, "hello")
   return await window.canister.GovTransChainApi.CreateProgram(Program)
 }
 
@@ -26,7 +28,6 @@ const ProgramStats =async()=>{
 
 // Stock endpoint
 const CreateStock=async(Stock)=>{
-  console.log(Stock)
   return await window.canister.GovTransChainApi.CreateStock(Stock)
 }
 
@@ -68,11 +69,9 @@ const ApproveRequest=async(ProgramId,ProfileId)=>{
 }
 
 const Transfer= async(Payload)=>{
-  console.log("Transfer",Payload)
   return await window.canister.GovTransChainApi.Transfer(Payload)
 }
 const Distribute=async(Payload)=>{
-  console.log(Payload,"Distribute")
   return await window.canister.GovTransChainApi.Distribute(Payload)
 }
 
@@ -100,6 +99,7 @@ export {
   CreateProfile,
   getProfile,
   GetAllProfile,
+  userProfileStats,
   CreateProgram,
   ProgramStats,
   CreateStock,

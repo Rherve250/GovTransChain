@@ -13,7 +13,7 @@ const Welcome=({name, role})=>{
         navigate('/Leader/Programs')
     }
     const goToCiti=()=>{
-        navigate('/Citizens/Dashboard')
+        navigate('/Citizens/Programs')
     }
     return(
         <div className="h-screen w-full overflow-clip bg-[#65a8fd] relative">

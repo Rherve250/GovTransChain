@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ToastError, ToastSuccess } from "../../utils/toast";
+import { ToastError } from "../../utils/toast";
 import { AllTransactions } from "@/utils/endpoints";
 
 export const AllTransactionsThunk = createAsyncThunk("AllTransactions",
